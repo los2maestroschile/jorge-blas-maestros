@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jorge & Blas | Los 2 Maestros</title>
+<meta name="description" content="Albañilería, electricidad, gasfitería, soldadura, porcelanato, pintura y construcciones en la X Región, Chile.">
+
+<!--
+=========================================================
+  ZONA DE CONFIGURACIÓN — EDITA SOLO ESTO
+  Cambia los valores entre comillas "" según corresponda.
+=========================================================
+-->
+<script>
+  const CONFIG = {
+    nombre: "Jorge & Blas",
+    slogan: "Los 2 Maestros",
+    zona: "X Región, Chile",
+    whatsapp: "56912345678",       // Sin el +, sin espacios. Ej: 56912345678
+    telefono: "+56912345678",       // Con el +, para que el celular marque directo
+    correo: "correo@gmail.com",
+    mensajeWhatsapp: "Hola! Vi su Instagram y quiero cotizar un trabajo 🛠️"
+  };
+</script>
+
+<style>
+  :root {
+    --negro: #1a1a1a;
+    --negro-suave: #262626;
+    --blanco: #ffffff;
+    --amarillo: #ffc107;
+    --naranjo: #ff6b00;
+    --gris: #b3b3b3;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(180deg, var(--negro) 0%, #000000 100%);
+    color: var(--blanco);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 24px 16px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 420px;
+    background: var(--negro-suave);
+    border-radius: 20px;
+    padding: 28px 22px 24px;
+    border: 1px solid rgba(255,193,7,0.25);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  }
+
+  /* franja diagonal estilo "construcción" */
+  .stripe {
+    height: 8px;
+    width: 100%;
+    background: repeating-linear-gradient(
+      45deg,
+      var(--amarillo),
+      var(--amarillo) 12px,
+      var(--negro) 12px,
+      var(--negro) 24px
+    );
+    border-radius: 6px;
+    margin-bottom: 20px;
+  }
+
+  header { text-align: center; margin-bottom: 22px; }
+
+  .logo-circle {
+    width: 78px;
+    height: 78px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    background: var(--amarillo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    border: 3px solid var(--naranjo);
+  }
+
+  h1 {
+    font-size: 22px;
+    color: var(--blanco);
+    letter-spacing: 0.5px;
+  }
+
+  h1 span { color: var(--amarillo); }
+
+  .slogan {
+    color: var(--naranjo);
+    font-weight: 700;
+    font-size: 15px;
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .zona {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--gris);
+    background: rgba(255,255,255,0.05);
+    padding: 5px 12px;
+    border-radius: 20px;
+  }
+
+  .servicios {
+    background: rgba(255,193,7,0.06);
+    border: 1px solid rgba(255,193,7,0.2);
+    border-radius: 14px;
+    padding: 16px 16px;
+    margin-bottom: 22px;
+  }
+
+  .servicios h2 {
+    font-size: 13px;
+    color: var(--amarillo);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .servicios ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 10px;
+  }
+
+  .servicios li {
+    font-size: 13px;
+    color: var(--blanco);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .servicios li::before {
+    content: "●";
+    color: var(--naranjo);
+    font-size: 8px;
+  }
+
+  .botones {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15.5px;
+    transition: transform 0.15s ease, filter 0.15s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn:active { transform: scale(0.97); }
+
+  .btn-whatsapp {
+    background: #25D366;
+    color: #08210f;
+  }
+
+  .btn-llamar {
+    background: var(--amarillo);
+    color: var(--negro);
+  }
+
+  .btn-correo {
+    background: transparent;
+    color: var(--blanco);
+    border: 2px solid var(--naranjo);
+  }
+
+  .btn:hover { filter: brightness(1.08); }
+
+  .icon { font-size: 19px; }
+
+  footer {
+    text-align: center;
+    font-size: 11.5px;
+    color: #777;
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+
+  footer strong { color: var(--gris); }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="stripe"></div>
+
+  <header>
+    <div class="logo-circle">🔨</div>
+    <h1 id="nombre">Jorge <span>&</span> Blas</h1>
+    <div class="slogan" id="slogan">Los 2 Maestros</div>
+    <div class="zona">📍 <span id="zona">X Región, Chile</span></div>
+  </header>
+
+  <div class="servicios">
+    <h2>Nuestros Servicios</h2>
+    <ul>
+      <li>Albañilería</li>
+      <li>Electricidad</li>
+      <li>Gasfitería</li>
+      <li>Soldadura</li>
+      <li>Porcelanato</li>
+      <li>Cerámica</li>
+      <li>Pintura</li>
+      <li>Construcciones</li>
+      <li>Ampliaciones</li>
+      <li>Rev. térmicos</li>
+    </ul>
+  </div>
+
+  <div class="botones">
+    <a class="btn btn-whatsapp" id="btnWhatsapp" target="_blank" rel="noopener">
+      <span class="icon">💬</span> Escribir por WhatsApp
+    </a>
+    <a class="btn btn-llamar" id="btnLlamar">
+      <span class="icon">📞</span> Llamar ahora
+    </a>
+    <a class="btn btn-correo" id="btnCorreo">
+      <span class="icon">✉️</span> Enviar correo
+    </a>
+  </div>
+
+  <footer>
+    <strong id="nombreFooter">Jorge & Blas | Los 2 Maestros</strong><br>
+    Trabajos garantizados · Presupuestos sin costo
+  </footer>
+</div>
+
+<script>
+  // Rellena textos desde CONFIG
+  document.getElementById('nombre').innerHTML = CONFIG.nombre.replace('&', '<span>&</span>');
+  document.getElementById('slogan').textContent = CONFIG.slogan;
+  document.getElementById('zona').textContent = CONFIG.zona;
+  document.getElementById('nombreFooter').textContent = `${CONFIG.nombre} | ${CONFIG.slogan}`;
+  document.title = `${CONFIG.nombre} | ${CONFIG.slogan}`;
+
+  // Arma los links de contacto
+  const waMsg = encodeURIComponent(CONFIG.mensajeWhatsapp);
+  document.getElementById('btnWhatsapp').href = `https://wa.me/${CONFIG.whatsapp}?text=${waMsg}`;
+  document.getElementById('btnLlamar').href = `tel:${CONFIG.telefono}`;
+  document.getElementById('btnCorreo').href = `mailto:${CONFIG.correo}?subject=Consulta%20por%20trabajo&body=Hola,%20quisiera%20cotizar...`;
+</script>
+
+</body>
+</html>
