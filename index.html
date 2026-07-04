@@ -283,18 +283,20 @@
     display: flex;
     gap: 10px;
     overflow-x: auto;
-    padding-bottom: 12px;
+    padding-bottom: 18px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    align-items: center;
   }
   .galeria::-webkit-scrollbar { display: none; }
   .galeria img {
-    flex: 0 0 62%;
-    max-height: 170px;
+    flex: 0 0 auto;
+    height: 230px;
+    width: auto;
+    max-width: 80vw;
     scroll-snap-align: center;
     border-radius: 12px;
-    aspect-ratio: 16 / 10;
     object-fit: cover;
     border: 1px solid rgba(255,193,7,0.25);
   }
@@ -386,7 +388,7 @@
         Usamos materiales de calidad y dejamos todo limpio y ordenado al terminar.
       </p>
       <div class="equipo-foto">
-        <img src="fotos/2.jpg" alt="Jorge y Blas - Los 2 Maestros">
+        <img src="fotos/equipo.jpg" alt="Jorge y Blas - Los 2 Maestros">
         <div class="etiqueta etiqueta-izq">
           <div class="flecha-abajo">▼</div>
           <div class="nombre-persona">Jorge</div>
