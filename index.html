@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jorge & Blas | Los 2 Maestros</title>
 <meta name="description" content="Albañilería, electricidad, gasfitería, soldadura, porcelanato, pintura y construcciones en la X Región, Chile.">
+<link rel="icon" href="assets/logo.jpg">
 
 <!--
 =========================================================
   ZONA DE CONFIGURACIÓN — EDITA SOLO ESTO
-  Cambia los valores entre comillas "" según corresponda.
 =========================================================
 -->
 <script>
@@ -17,17 +17,27 @@
     nombre: "Jorge & Blas",
     slogan: "Los 2 Maestros",
     zona: "X Región, Chile",
-    whatsapp: "56912345678",       // Sin el +, sin espacios. Ej: 56912345678
-    telefono: "+56912345678",       // Con el +, para que el celular marque directo
-    correo: "correo@gmail.com",
-    mensajeWhatsapp: "Hola! Vi su Instagram y quiero cotizar un trabajo 🛠️"
+    whatsapp: "56992944856",          // sin el +, sin espacios
+    telefono: "+56992944856",          // con el +
+    correo: "los2maestroschile@gmail.com",
+    instagram: "https://www.instagram.com/los2maestros/",
+    facebook: "https://www.facebook.com/profile.php?id=61591220507969&locale=es_LA",
+    mensajeWhatsapp: "Hola! Vi su Instagram y quiero cotizar un trabajo 🛠️",
+
+    // GALERÍA: agrega aquí el nombre de cada foto que subas a la carpeta /fotos
+    // Ejemplo: si subes fotos/trabajo1.jpg, agrégalo a la lista de abajo.
+    galeria: [
+      "fotos/1.jpg","fotos/2.jpg","fotos/3.jpg","fotos/4.jpg","fotos/5.jpg",
+      "fotos/6.jpg","fotos/7.jpg","fotos/8.jpg","fotos/9.jpg","fotos/10.jpg",
+      "fotos/11.jpg","fotos/12.jpg","fotos/13.jpg","fotos/14.jpg","fotos/15.jpg"
+    ]
   };
 </script>
 
 <style>
   :root {
     --negro: #1a1a1a;
-    --negro-suave: #262626;
+    --negro-suave: #232323;
     --blanco: #ffffff;
     --amarillo: #ffc107;
     --naranjo: #ff6b00;
@@ -38,67 +48,70 @@
 
   body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(180deg, var(--negro) 0%, #000000 100%);
+    background: #000;
     color: var(--blanco);
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    padding: 24px 16px;
+    padding: 0 0 30px;
   }
 
   .card {
     width: 100%;
-    max-width: 420px;
+    max-width: 460px;
     background: var(--negro-suave);
-    border-radius: 20px;
-    padding: 28px 22px 24px;
-    border: 1px solid rgba(255,193,7,0.25);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
   }
 
-  /* franja diagonal estilo "construcción" */
-  .stripe {
-    height: 8px;
+  /* ---- BANNER ---- */
+  .banner-wrap {
     width: 100%;
-    background: repeating-linear-gradient(
-      45deg,
-      var(--amarillo),
-      var(--amarillo) 12px,
-      var(--negro) 12px,
-      var(--negro) 24px
-    );
-    border-radius: 6px;
-    margin-bottom: 20px;
+    aspect-ratio: 21 / 9;
+    overflow: hidden;
+    border-bottom: 3px solid var(--amarillo);
+  }
+  .banner-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
-  header { text-align: center; margin-bottom: 22px; }
+  .contenido { padding: 0 22px; }
+
+  header {
+    text-align: center;
+    margin-top: -46px;
+    margin-bottom: 16px;
+  }
 
   .logo-circle {
-    width: 78px;
-    height: 78px;
-    margin: 0 auto 14px;
+    width: 92px;
+    height: 92px;
+    margin: 0 auto 12px;
     border-radius: 50%;
-    background: var(--amarillo);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 34px;
-    border: 3px solid var(--naranjo);
+    overflow: hidden;
+    border: 3px solid var(--amarillo);
+    background: var(--negro);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  }
+  .logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   h1 {
-    font-size: 22px;
-    color: var(--blanco);
+    font-size: 21px;
     letter-spacing: 0.5px;
+    margin-top: 4px;
   }
-
   h1 span { color: var(--amarillo); }
 
   .slogan {
     color: var(--naranjo);
     font-weight: 700;
-    font-size: 15px;
-    margin-top: 4px;
+    font-size: 14px;
+    margin-top: 3px;
     text-transform: uppercase;
     letter-spacing: 1px;
   }
@@ -110,7 +123,7 @@
     margin-top: 10px;
     font-size: 13px;
     color: var(--gris);
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.06);
     padding: 5px 12px;
     border-radius: 20px;
   }
@@ -120,9 +133,8 @@
     border: 1px solid rgba(255,193,7,0.2);
     border-radius: 14px;
     padding: 16px 16px;
-    margin-bottom: 22px;
+    margin: 20px 0;
   }
-
   .servicios h2 {
     font-size: 13px;
     color: var(--amarillo);
@@ -131,35 +143,85 @@
     margin-bottom: 10px;
     text-align: center;
   }
-
   .servicios ul {
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px 10px;
   }
-
   .servicios li {
     font-size: 13px;
-    color: var(--blanco);
     display: flex;
     align-items: center;
     gap: 6px;
   }
-
   .servicios li::before {
     content: "●";
     color: var(--naranjo);
     font-size: 8px;
   }
 
+  .quienes {
+    margin-bottom: 22px;
+  }
+  .quienes h2 {
+    font-size: 13px;
+    color: var(--amarillo);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .quienes-texto {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #d9d9d9;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .equipo-foto {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255,193,7,0.25);
+  }
+  .equipo-foto img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+  .etiqueta {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.9);
+  }
+  .etiqueta-izq { left: 14%; transform: translateX(-50%); }
+  .etiqueta-der { left: 78%; transform: translateX(-50%); }
+  .flecha-abajo {
+    color: var(--amarillo);
+    font-size: 20px;
+    line-height: 1;
+  }
+  .nombre-persona {
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--blanco);
+    margin-top: 2px;
+    background: rgba(0,0,0,0.55);
+    padding: 2px 10px;
+    border-radius: 8px;
+  }
+
   .botones {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-bottom: 18px;
+    margin-bottom: 22px;
   }
-
   .btn {
     display: flex;
     align-items: center;
@@ -174,99 +236,274 @@
     border: none;
     cursor: pointer;
   }
-
   .btn:active { transform: scale(0.97); }
-
-  .btn-whatsapp {
-    background: #25D366;
-    color: #08210f;
-  }
-
-  .btn-llamar {
-    background: var(--amarillo);
-    color: var(--negro);
-  }
-
-  .btn-correo {
-    background: transparent;
-    color: var(--blanco);
-    border: 2px solid var(--naranjo);
-  }
-
+  .btn-whatsapp { background: #25D366; color: #08210f; }
+  .btn-llamar { background: var(--amarillo); color: var(--negro); }
+  .btn-correo { background: transparent; color: var(--blanco); border: 2px solid var(--naranjo); }
   .btn:hover { filter: brightness(1.08); }
-
   .icon { font-size: 19px; }
+
+  /* Redes sociales */
+  .redes {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 26px;
+  }
+  .redes a {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,193,7,0.3);
+    text-decoration: none;
+    color: var(--amarillo);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .redes a:active { transform: scale(0.92); }
+  .redes a:hover { background: rgba(255,193,7,0.15); }
+
+  /* Galería */
+  .galeria-titulo {
+    text-align: center;
+    font-size: 13px;
+    color: var(--amarillo);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .galeria-wrap {
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .galeria {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 18px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .galeria::-webkit-scrollbar { display: none; }
+  .galeria img {
+    flex: 0 0 78%;
+    scroll-snap-align: center;
+    border-radius: 12px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 1px solid rgba(255,193,7,0.25);
+  }
+  .galeria-arrow {
+    position: absolute;
+    top: calc(50% - 9px);
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0,0,0,0.55);
+    color: var(--amarillo);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .galeria-prev { left: 4px; }
+  .galeria-next { right: 4px; }
+  /* Las flechas solo aparecen al pasar el mouse (equipos con puntero) */
+  @media (hover: hover) {
+    .galeria-wrap:hover .galeria-arrow { opacity: 1; }
+  }
+  .galeria-vacia {
+    text-align: center;
+    font-size: 12.5px;
+    color: #777;
+    padding: 18px 10px;
+    border: 1px dashed rgba(255,193,7,0.3);
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
 
   footer {
     text-align: center;
     font-size: 11.5px;
     color: #777;
-    margin-top: 8px;
     line-height: 1.5;
+    padding-bottom: 6px;
   }
-
   footer strong { color: var(--gris); }
 </style>
 </head>
 <body>
 
 <div class="card">
-  <div class="stripe"></div>
 
-  <header>
-    <div class="logo-circle">🔨</div>
-    <h1 id="nombre">Jorge <span>&</span> Blas</h1>
-    <div class="slogan" id="slogan">Los 2 Maestros</div>
-    <div class="zona">📍 <span id="zona">X Región, Chile</span></div>
-  </header>
-
-  <div class="servicios">
-    <h2>Nuestros Servicios</h2>
-    <ul>
-      <li>Albañilería</li>
-      <li>Electricidad</li>
-      <li>Gasfitería</li>
-      <li>Soldadura</li>
-      <li>Porcelanato</li>
-      <li>Cerámica</li>
-      <li>Pintura</li>
-      <li>Construcciones</li>
-      <li>Ampliaciones</li>
-      <li>Rev. térmicos</li>
-    </ul>
+  <div class="banner-wrap">
+    <img src="assets/banner.jpg" alt="Los 2 Maestros - Construcción y servicios integrales">
   </div>
 
-  <div class="botones">
-    <a class="btn btn-whatsapp" id="btnWhatsapp" target="_blank" rel="noopener">
-      <span class="icon">💬</span> Escribir por WhatsApp
-    </a>
-    <a class="btn btn-llamar" id="btnLlamar">
-      <span class="icon">📞</span> Llamar ahora
-    </a>
-    <a class="btn btn-correo" id="btnCorreo">
-      <span class="icon">✉️</span> Enviar correo
-    </a>
-  </div>
+  <div class="contenido">
+    <header>
+      <div class="logo-circle">
+        <img src="assets/logo.jpg" alt="Logo Los 2 Maestros">
+      </div>
+      <h1 id="nombre">Jorge <span>&</span> Blas</h1>
+      <div class="slogan" id="slogan">Los 2 Maestros</div>
+      <div class="zona">📍 <span id="zona">X Región, Chile</span></div>
+    </header>
 
-  <footer>
-    <strong id="nombreFooter">Jorge & Blas | Los 2 Maestros</strong><br>
-    Trabajos garantizados · Presupuestos sin costo
-  </footer>
+    <div class="servicios">
+      <h2>Nuestros Servicios</h2>
+      <ul>
+        <li>Revestimiento térmico</li>
+        <li>Climatización</li>
+        <li>Albañilería</li>
+        <li>Electricidad</li>
+        <li>Gasfitería</li>
+        <li>Soldadura</li>
+        <li>Porcelanato y cerámica</li>
+        <li>Pintura</li>
+        <li>Construcciones desde 0</li>
+        <li>Ampliaciones</li>
+      </ul>
+    </div>
+
+    <div class="quienes">
+      <h2>Quiénes Somos</h2>
+      <p class="quienes-texto">
+        Somos Jorge y Blas, maestros de la X Región con años de experiencia en
+        construcción y remodelación. Nos caracteriza la responsabilidad, la
+        puntualidad y el compromiso con cada trabajo, grande o pequeño.
+        Usamos materiales de calidad y dejamos todo limpio y ordenado al terminar.
+      </p>
+      <div class="equipo-foto">
+        <img src="fotos/equipo.jpg" alt="Jorge y Blas - Los 2 Maestros">
+        <div class="etiqueta etiqueta-izq">
+          <div class="flecha-abajo">▼</div>
+          <div class="nombre-persona">Jorge</div>
+        </div>
+        <div class="etiqueta etiqueta-der">
+          <div class="flecha-abajo">▼</div>
+          <div class="nombre-persona">Blas</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="botones">
+      <a class="btn btn-whatsapp" id="btnWhatsapp" target="_blank" rel="noopener">
+        <span class="icon">💬</span> Escribir por WhatsApp
+      </a>
+      <a class="btn btn-llamar" id="btnLlamar">
+        <span class="icon">📞</span> Llamar ahora
+      </a>
+      <a class="btn btn-correo" id="btnCorreo">
+        <span class="icon">✉️</span> Enviar correo
+      </a>
+    </div>
+
+    <div class="redes">
+      <a id="btnInstagram" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="5.5"/>
+          <circle cx="12" cy="12" r="4.2"/>
+          <circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+      <a id="btnFacebook" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+          <path d="M15.5 8.5H13.8c-.6 0-1 .5-1 1.2V12h2.6l-.4 2.7h-2.2V22h-3v-7.3H7.6V12h2.2V9.4c0-2.2 1.5-4 3.7-4h2z"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="galeria-titulo">Galería de Trabajos</div>
+    <div class="galeria-wrap">
+      <button class="galeria-arrow galeria-prev" id="galeriaPrev" aria-label="Anterior">‹</button>
+      <div class="galeria" id="galeria"></div>
+      <button class="galeria-arrow galeria-next" id="galeriaNext" aria-label="Siguiente">›</button>
+    </div>
+    <div class="galeria-vacia" id="galeriaVacia" style="display:none;">
+      Aquí aparecerán las fotos de trabajos.<br>Súbelas a la carpeta "fotos" y agrégalas en CONFIG.galeria.
+    </div>
+
+    <footer>
+      <strong id="nombreFooter">Jorge & Blas | Los 2 Maestros</strong><br>
+      Trabajos garantizados · Presupuestos sin costo
+    </footer>
+  </div>
 </div>
 
 <script>
-  // Rellena textos desde CONFIG
   document.getElementById('nombre').innerHTML = CONFIG.nombre.replace('&', '<span>&</span>');
   document.getElementById('slogan').textContent = CONFIG.slogan;
   document.getElementById('zona').textContent = CONFIG.zona;
   document.getElementById('nombreFooter').textContent = `${CONFIG.nombre} | ${CONFIG.slogan}`;
   document.title = `${CONFIG.nombre} | ${CONFIG.slogan}`;
 
-  // Arma los links de contacto
   const waMsg = encodeURIComponent(CONFIG.mensajeWhatsapp);
   document.getElementById('btnWhatsapp').href = `https://wa.me/${CONFIG.whatsapp}?text=${waMsg}`;
   document.getElementById('btnLlamar').href = `tel:${CONFIG.telefono}`;
   document.getElementById('btnCorreo').href = `mailto:${CONFIG.correo}?subject=Consulta%20por%20trabajo&body=Hola,%20quisiera%20cotizar...`;
+  document.getElementById('btnInstagram').href = CONFIG.instagram;
+  document.getElementById('btnFacebook').href = CONFIG.facebook;
+
+  // Renderiza galería en carrusel infinito
+  const galeriaEl = document.getElementById('galeria');
+  const vaciaEl = document.getElementById('galeriaVacia');
+  const prevBtn = document.getElementById('galeriaPrev');
+  const nextBtn = document.getElementById('galeriaNext');
+
+  if (CONFIG.galeria && CONFIG.galeria.length > 0) {
+    // Triplicamos la lista para poder scrollear infinito hacia ambos lados
+    const set = CONFIG.galeria;
+    const tripleSet = [...set, ...set, ...set];
+    tripleSet.forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = 'Trabajo realizado - Los 2 Maestros';
+      img.loading = 'lazy';
+      img.onerror = () => img.remove();
+      galeriaEl.appendChild(img);
+    });
+
+    let setWidth = 0;
+    const calcularAncho = () => {
+      setWidth = galeriaEl.scrollWidth / 3;
+      // Arranca posicionado en el segundo set (medio), para poder ir para ambos lados
+      galeriaEl.scrollLeft = setWidth;
+    };
+    window.addEventListener('load', calcularAncho);
+    setTimeout(calcularAncho, 300); // fallback si las imágenes ya estaban en caché
+
+    // Reubica el scroll sin animación al llegar a los bordes, dando efecto infinito
+    galeriaEl.addEventListener('scroll', () => {
+      if (!setWidth) return;
+      if (galeriaEl.scrollLeft <= 2) {
+        galeriaEl.scrollLeft += setWidth;
+      } else if (galeriaEl.scrollLeft >= setWidth * 2 - 2) {
+        galeriaEl.scrollLeft -= setWidth;
+      }
+    });
+
+    const paso = () => galeriaEl.querySelector('img')?.getBoundingClientRect().width + 10 || 260;
+    prevBtn.addEventListener('click', () => {
+      galeriaEl.scrollBy({ left: -paso(), behavior: 'smooth' });
+    });
+    nextBtn.addEventListener('click', () => {
+      galeriaEl.scrollBy({ left: paso(), behavior: 'smooth' });
+    });
+  } else {
+    document.querySelector('.galeria-wrap').style.display = 'none';
+    vaciaEl.style.display = 'block';
+  }
 </script>
 
 </body>
