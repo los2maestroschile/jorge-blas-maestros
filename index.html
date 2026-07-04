@@ -7,25 +7,17 @@
 <meta name="description" content="Albañilería, electricidad, gasfitería, soldadura, porcelanato, pintura y construcciones en la X Región, Chile.">
 <link rel="icon" href="assets/logo.jpg">
 
-<!--
-=========================================================
-  ZONA DE CONFIGURACIÓN — EDITA SOLO ESTO
-=========================================================
--->
 <script>
   const CONFIG = {
     nombre: "Jorge & Blas",
     slogan: "Los 2 Maestros",
     zona: "X Región, Chile",
-    whatsapp: "56929944856",          // sin el +, sin espacios
-    telefono: "+56929944856",          // con el +
+    whatsapp: "56929944856",
+    telefono: "+56929944856",
     correo: "los2maestroschile@gmail.com",
     instagram: "https://www.instagram.com/los2maestros/",
     facebook: "https://www.facebook.com/profile.php?id=61591220507969&locale=es_LA",
     mensajeWhatsapp: "Hola, quiero cotizar un trabajo 🛠️",
-
-    // GALERÍA: agrega aquí el nombre de cada foto que subas a la carpeta /fotos
-    // Ejemplo: si subes fotos/trabajo1.jpg, agrégalo a la lista de abajo.
     galeria: [
       "fotos/9.jpg","fotos/8.jpg","fotos/7.jpg","fotos/1.jpg","fotos/3.jpg",
       "fotos/13.jpg","fotos/11.jpg","fotos/15.jpg","fotos/4.jpg","fotos/12.jpg",
@@ -62,13 +54,13 @@
     background: var(--negro-suave);
   }
 
-  /* ---- BANNER ---- */
   .banner-wrap {
     width: 100%;
     aspect-ratio: 21 / 9;
     overflow: hidden;
     border-bottom: 3px solid var(--amarillo);
   }
+
   .banner-wrap img {
     width: 100%;
     height: 100%;
@@ -94,6 +86,7 @@
     background: var(--negro);
     box-shadow: 0 6px 18px rgba(0,0,0,0.6);
   }
+
   .logo-circle img {
     width: 100%;
     height: 100%;
@@ -105,6 +98,7 @@
     letter-spacing: 0.5px;
     margin-top: 4px;
   }
+
   h1 span { color: var(--amarillo); }
 
   .slogan {
@@ -132,10 +126,13 @@
     background: rgba(255,193,7,0.06);
     border: 1px solid rgba(255,193,7,0.2);
     border-radius: 14px;
-    padding: 16px 16px;
+    padding: 16px;
     margin: 20px 0;
   }
-  .servicios h2 {
+
+  .servicios h2,
+  .quienes h2,
+  .galeria-titulo {
     font-size: 13px;
     color: var(--amarillo);
     text-transform: uppercase;
@@ -143,18 +140,21 @@
     margin-bottom: 10px;
     text-align: center;
   }
+
   .servicios ul {
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px 10px;
   }
+
   .servicios li {
     font-size: 13px;
     display: flex;
     align-items: center;
     gap: 6px;
   }
+
   .servicios li::before {
     content: "●";
     color: var(--naranjo);
@@ -164,14 +164,7 @@
   .quienes {
     margin-bottom: 22px;
   }
-  .quienes h2 {
-    font-size: 13px;
-    color: var(--amarillo);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-    text-align: center;
-  }
+
   .quienes-texto {
     font-size: 13.5px;
     line-height: 1.6;
@@ -179,41 +172,61 @@
     text-align: center;
     margin-bottom: 16px;
   }
+
   .equipo-foto {
     position: relative;
     border-radius: 14px;
     overflow: hidden;
     border: 1px solid rgba(255,193,7,0.25);
   }
+
   .equipo-foto img {
     width: 100%;
     display: block;
     aspect-ratio: 4 / 3;
     object-fit: cover;
   }
+
   .etiqueta {
     position: absolute;
-    bottom: 10px;
+    bottom: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-shadow: 0 2px 6px rgba(0,0,0,0.9);
+    width: 128px;
+    max-width: calc(50% - 14px);
+    z-index: 2;
   }
-  .etiqueta-izq { left: 14%; transform: translateX(-50%); }
-  .etiqueta-der { left: 78%; transform: translateX(-50%); }
+
+  .etiqueta-izq {
+    left: 26%;
+    transform: translateX(-50%);
+  }
+
+  .etiqueta-der {
+    left: 74%;
+    transform: translateX(-50%);
+  }
+
   .flecha-abajo {
     color: var(--amarillo);
-    font-size: 20px;
+    font-size: 21px;
     line-height: 1;
+    margin-bottom: 3px;
   }
+
   .nombre-persona {
+    width: 100%;
     font-weight: 800;
-    font-size: 15px;
+    font-size: 13.5px;
     color: var(--blanco);
-    margin-top: 2px;
-    background: rgba(0,0,0,0.55);
-    padding: 2px 10px;
+    background: rgba(0,0,0,0.68);
+    padding: 4px 6px;
     border-radius: 8px;
+    line-height: 1.15;
+    text-align: center;
+    white-space: normal;
   }
 
   .botones {
@@ -222,6 +235,7 @@
     gap: 12px;
     margin-bottom: 22px;
   }
+
   .btn {
     display: flex;
     align-items: center;
@@ -236,6 +250,7 @@
     border: none;
     cursor: pointer;
   }
+
   .btn:active { transform: scale(0.97); }
   .btn-whatsapp { background: #25D366; color: #08210f; }
   .btn-llamar { background: var(--amarillo); color: var(--negro); }
@@ -243,13 +258,13 @@
   .btn:hover { filter: brightness(1.08); }
   .icon { font-size: 19px; }
 
-  /* Redes sociales */
   .redes {
     display: flex;
     justify-content: center;
     gap: 14px;
     margin-bottom: 26px;
   }
+
   .redes a {
     width: 46px;
     height: 46px;
@@ -263,36 +278,35 @@
     color: var(--amarillo);
     transition: transform 0.15s ease, background 0.15s ease;
   }
+
   .redes a:active { transform: scale(0.92); }
   .redes a:hover { background: rgba(255,193,7,0.15); }
 
-  /* Galería */
   .galeria-titulo {
-    text-align: center;
-    font-size: 13px;
-    color: var(--amarillo);
-    text-transform: uppercase;
-    letter-spacing: 1px;
     margin-bottom: 12px;
   }
+
   .galeria-wrap {
     position: relative;
     margin-bottom: 8px;
   }
+
   .galeria {
     display: flex;
     gap: 10px;
     overflow-x: auto;
-    padding-bottom: 18px;
+    padding-bottom: 14px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     align-items: center;
   }
+
   .galeria::-webkit-scrollbar { display: none; }
+
   .galeria img {
     flex: 0 0 auto;
-    height: 230px;
+    height: 210px;
     width: auto;
     max-width: 80vw;
     scroll-snap-align: center;
@@ -300,9 +314,10 @@
     object-fit: cover;
     border: 1px solid rgba(255,193,7,0.25);
   }
+
   .galeria-arrow {
     position: absolute;
-    top: calc(50% - 9px);
+    top: calc(50% - 7px);
     transform: translateY(-50%);
     width: 38px;
     height: 38px;
@@ -319,12 +334,14 @@
     opacity: 0;
     transition: opacity 0.2s ease;
   }
+
   .galeria-prev { left: 4px; }
   .galeria-next { right: 4px; }
-  /* Las flechas solo aparecen al pasar el mouse (equipos con puntero) */
+
   @media (hover: hover) {
     .galeria-wrap:hover .galeria-arrow { opacity: 1; }
   }
+
   .galeria-vacia {
     text-align: center;
     font-size: 12.5px;
@@ -342,11 +359,12 @@
     line-height: 1.5;
     padding-bottom: 6px;
   }
+
   footer strong { color: var(--gris); }
 </style>
 </head>
-<body>
 
+<body>
 <div class="card">
 
   <div class="banner-wrap">
@@ -387,12 +405,15 @@
         puntualidad y el compromiso con cada trabajo, grande o pequeño.
         Usamos materiales de calidad y dejamos todo limpio y ordenado al terminar.
       </p>
+
       <div class="equipo-foto">
-        <img src="fotos/equipo.jpg" alt="Jorge y Blas - Los 2 Maestros">
+        <img src="fotos/2.jpg" alt="Jorge Caiguan y Blas Pinto - Los 2 Maestros">
+
         <div class="etiqueta etiqueta-izq">
           <div class="flecha-abajo">▼</div>
           <div class="nombre-persona">Jorge Caiguan</div>
         </div>
+
         <div class="etiqueta etiqueta-der">
           <div class="flecha-abajo">▼</div>
           <div class="nombre-persona">Blas Pinto</div>
@@ -420,6 +441,7 @@
           <circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/>
         </svg>
       </a>
+
       <a id="btnFacebook" target="_blank" rel="noopener" aria-label="Facebook">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
           <path d="M15.5 8.5H13.8c-.6 0-1 .5-1 1.2V12h2.6l-.4 2.7h-2.2V22h-3v-7.3H7.6V12h2.2V9.4c0-2.2 1.5-4 3.7-4h2z"/>
@@ -428,11 +450,13 @@
     </div>
 
     <div class="galeria-titulo">Galería de Trabajos</div>
+
     <div class="galeria-wrap">
       <button class="galeria-arrow galeria-prev" id="galeriaPrev" aria-label="Anterior">‹</button>
       <div class="galeria" id="galeria"></div>
       <button class="galeria-arrow galeria-next" id="galeriaNext" aria-label="Siguiente">›</button>
     </div>
+
     <div class="galeria-vacia" id="galeriaVacia" style="display:none;">
       Aquí aparecerán las fotos de trabajos.<br>Súbelas a la carpeta "fotos" y agrégalas en CONFIG.galeria.
     </div>
@@ -458,16 +482,15 @@
   document.getElementById('btnInstagram').href = CONFIG.instagram;
   document.getElementById('btnFacebook').href = CONFIG.facebook;
 
-  // Renderiza galería en carrusel infinito
   const galeriaEl = document.getElementById('galeria');
   const vaciaEl = document.getElementById('galeriaVacia');
   const prevBtn = document.getElementById('galeriaPrev');
   const nextBtn = document.getElementById('galeriaNext');
 
   if (CONFIG.galeria && CONFIG.galeria.length > 0) {
-    // Triplicamos la lista para poder scrollear infinito hacia ambos lados
     const set = CONFIG.galeria;
     const tripleSet = [...set, ...set, ...set];
+
     tripleSet.forEach(src => {
       const img = document.createElement('img');
       img.src = src;
@@ -478,17 +501,18 @@
     });
 
     let setWidth = 0;
+
     const calcularAncho = () => {
       setWidth = galeriaEl.scrollWidth / 3;
-      // Arranca posicionado en el segundo set (medio), para poder ir para ambos lados
       galeriaEl.scrollLeft = setWidth;
     };
-    window.addEventListener('load', calcularAncho);
-    setTimeout(calcularAncho, 300); // fallback si las imágenes ya estaban en caché
 
-    // Reubica el scroll sin animación al llegar a los bordes, dando efecto infinito
+    window.addEventListener('load', calcularAncho);
+    setTimeout(calcularAncho, 300);
+
     galeriaEl.addEventListener('scroll', () => {
       if (!setWidth) return;
+
       if (galeriaEl.scrollLeft <= 2) {
         galeriaEl.scrollLeft += setWidth;
       } else if (galeriaEl.scrollLeft >= setWidth * 2 - 2) {
@@ -497,9 +521,11 @@
     });
 
     const paso = () => galeriaEl.querySelector('img')?.getBoundingClientRect().width + 10 || 260;
+
     prevBtn.addEventListener('click', () => {
       galeriaEl.scrollBy({ left: -paso(), behavior: 'smooth' });
     });
+
     nextBtn.addEventListener('click', () => {
       galeriaEl.scrollBy({ left: paso(), behavior: 'smooth' });
     });
@@ -508,6 +534,5 @@
     vaciaEl.style.display = 'block';
   }
 </script>
-
 </body>
 </html>
